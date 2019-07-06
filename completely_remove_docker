@@ -1,0 +1,8 @@
+!#/bin/bash
+docker stop $(docker ps -aq)
+docker rm $(docker ps -aq)
+docker rmi $(docker images -aq)
+docker system prune
+apt-get purge -y docker-engine docker docker.io docker-ce docker-compose
+apt-get autoremove -y --purge docker-engine docker docker.io docker-ce docker-compose
+rm -rf /var/lib/docker
