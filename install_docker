@@ -15,7 +15,10 @@ add-apt-repository \
    stable"
 apt-get update
 apt-get install -y docker-ce docker-ce-cli containerd.io 
-docker run hello-world
 echo "docker installation complete... Installing docker-compose"
 curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
+groupadd docker
+usermod -aG docker $USER
+echo "Restart your computer for changes to take place and then restart the script or just run the following command `docker run hello-world` without sudo access to test"
+docker run hello-world
