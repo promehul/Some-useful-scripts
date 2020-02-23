@@ -22,3 +22,4 @@ groupadd docker
 usermod -aG docker $USER
 echo "Restart your computer for changes to take place and then restart the script or just run the following command `docker run hello-world` without sudo access to test"
 docker run hello-world
+echo " \n Restart your computer to run all your docker commands without sudo access to them"
